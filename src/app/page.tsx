@@ -47,15 +47,15 @@ const LOGO_URL =
   "https://i.imgur.com/placeholder.png"; // Will be replaced dynamically
 
 const PHOTOS_2022 = [
-  "https://photos.fife.usercontent.com/pw/AP1GczN6bZ2el6EFH_5C3T5ai57LmpkdYLMCWb6fBneccoheOBXKlLaTTisVSg=w1099-h824-s-no-gm?authuser=0",
-  "https://photos.fife.usercontent.com/pw/AP1GczPQhEiH83K8ohpdrsXZSPpPoS2vmNtWtOHVFx__L8k6U6W28erzho5pSQ=w1099-h824-s-no-gm?authuser=0",
-  "https://photos.fife.usercontent.com/pw/AP1GczOd5v-qJZ9v9cThC04-mY7SF2YTKj8C5Rtr5N_mOM--KVxQcLlkGqu2qg=w761-h824-s-no-gm?authuser=0",
-  "https://photos.fife.usercontent.com/pw/AP1GczOrDiu6PiGVdPonBxe2qDJdJ4vBJwORrtI59VPw5rsGM61JYUF-vlKktg=w1099-h824-s-no-gm?authuser=0",
-  "https://photos.fife.usercontent.com/pw/AP1GczOpJ9LUG-2dms4cMpQv-6jy8996cONHwu7Wf0syoZQNUVYsqBg4BW1BuQ=w1099-h824-s-no-gm?authuser=0",
-  "https://photos.fife.usercontent.com/pw/AP1GczOt8KIppDcT6NjZkWqGknLr6NDJdla-n24447ohe1nA2pJMiyR0Dl9h2A=w1099-h824-s-no-gm?authuser=0",
-  "https://photos.fife.usercontent.com/pw/AP1GczOnr7pU700UKQrRDRewHVqe8WCUtXlDbCOjOl2hkf9phWmg2iVhdlb9sw=w1099-h824-s-no-gm?authuser=0",
-  "https://photos.fife.usercontent.com/pw/AP1GczOcc6l67jPD9qqXQCYcrcSDuIqKHcFBFLdAisPNGGOuC6CNaLC_qhAjAw=w1099-h824-s-no-gm?authuser=0",
-  "https://photos.fife.usercontent.com/pw/AP1GczPNVnwgU4JpbdqLMfSxsjumVxxTl6wYonhg28O3tJ58VY1diyutu1p9jw=w1099-h824-s-no-gm?authuser=0"
+  "https://lh3.googleusercontent.com/pw/AP1GczPzDAPwuj7QrAybtsPeYCzYPEgdaGnn5mJDzvq6XTz8Jcl8LIDKKZj0gDKYzt1ZHUnckoDcORrfjxu8ff6cHzIfWK0HTt72cC66oTAoIOfJpyyX-WlpB8I9BU2gYcMBsVaWhthPOgEP6ZAxygeVdF8gLw=w618-h824-s-no-gm?authuser=0",
+  "https://lh3.googleusercontent.com/pw/AP1GczPEM0WaXWV1Kx_iuk68mCQ-hS2IOVl8OtyjuNabk3F_eD98xs4DGEmunE45_KzjB90O0ndg0oE-rWQmiAMEy-qrxsTijnHeGyv02XuuEu8KeNszA6Ze0lGoTN5Tk3iiyDNSE19T6r2wxlgtRoQmHvDGTA=w1099-h824-s-no-gm?authuser=0",
+  "https://lh3.googleusercontent.com/pw/AP1GczMP8C2u-fQHoXKRGOHAceNN3Iajai2dEhNMf4MQtE1pwyGyS3KdhsUQqNFPrDo9Nsvs8trd2CXeEVoK478o4llpHmz6JdfLz-bUe1MAU0bpHfxCz4Kx06VDKw0mBJNoKHzA9o_CnweQsbPM_BtnshmfKQ=w1099-h824-s-no-gm?authuser=0",
+  "https://lh3.googleusercontent.com/pw/AP1GczMScsObPiOHH2-nU341iuUcSCnY90Rxrh98rlZ_k1e3x1VkwLgewyOgwmCaWE-XGAgQi68b_JuzoLFgHlO9cYhB86hG7LmNbxuyqsxwuZYCPu3Il1ddIB24YaEcu0422M-s8iWCNjuX9ksC6a3sjduxXQ=w1099-h824-s-no-gm?authuser=0",
+  "https://lh3.googleusercontent.com/pw/AP1GczM7vPslKSN5kJi3ytJLQEgFBq5oVjtqCvu0eV5uHAnwUWe6SKHP71vfKuuSDzmdxl6_mTGU2GXGlotmx_7sHFhs1HRAgQRi6CtgiKBScXgc-Z2mhhC1bORk8HGx-8VRc-yz04qVKbo4OIMclN0UAUBkcg=w1099-h824-s-no-gm?authuser=0",
+  "https://lh3.googleusercontent.com/pw/AP1GczMI_cCk8fH2HrgbSTo0LIXRm70BFFMmMOc9hi26JUqXEs3ZTRfqmX_-Ym4pGh6QlH2Qn5F47r_J-TOPSAwWJPaJE7t6UOYQGOsN-rN3Q9WJfU_94b9pKL67h87aeRFvUCTJi9bbQuheD0i6hEcqL9vV_g=w1099-h824-s-no-gm?authuser=0",
+  "https://lh3.googleusercontent.com/pw/AP1GczPpjkszBZOALZLX8ngFpMZFTbYFKdAHOGRaCzhiaQqLt2tV22ivjqF7iMehITBaNcnyjyKKHo3Z_4JtUmZK2iNtl054N07o9ycD5C1EAD-fbiDoI99Y5e6AKvhXxLK54cQwgq2PMdKLs5PROU9vV9Rh3g=w1099-h824-s-no-gm?authuser=0",
+  "https://lh3.googleusercontent.com/pw/AP1GczPsZIx4vM-aGWJi6jdYLbW9KwDKUzPiGsPaPDs-wTAlc0-wt4cnYXZVc9Y8V-kGKLyq5n3NFzrwmG7dD_QLYYfseYzr5ys-S4cQNe4TarJvH_buParX88koxnCHUBSUxEOhp2RnzttBKPmy_GCOwDeVhQ=w1099-h824-s-no-gm?authuser=0",
+  "https://lh3.googleusercontent.com/pw/AP1GczMHO2rAU8U7E4AXoIq4D0-YjtR832Cj-hZ7YSyLQPPNTucRHeHD-Vt9BsO9CK8KrHz19wu5Qz5uLmXS1dV0p1pPNuGR7_g5vxGzEI2yH5dbSMtpDjCi7GClfBuRZTqAKRIrnEr7RcMchvNhVSXqrtPozA=w1099-h824-s-no-gm?authuser=0"
 ];
 
 const PHOTOS_2023 = [
