@@ -297,7 +297,6 @@ export default function UNFSWebsite() {
 
       {/* Mobile Drawer */}
       <div className={`unfs-mobile-drawer${mobileNav ? " open" : ""}`}>
-        <button onClick={() => setMobileNav(false)} style={{ position: "absolute", top: 20, right: 24, background: "none", border: "none", cursor: "pointer", color: COLORS.white, fontSize: 28, lineHeight: 1 }}>✕</button>
         <div style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 13, letterSpacing: 3, textTransform: "uppercase", color: COLORS.gold, marginBottom: 24, opacity: 0.7 }}>Navigation</div>
         {navItems.map(item => (
           <button key={item.id} onClick={() => scrollTo(item.id)} style={{ background: "none", border: "none", cursor: "pointer", fontFamily: "'Playfair Display', serif", fontSize: 28, fontWeight: 700, color: COLORS.white, padding: "8px 0", letterSpacing: 0.5, transition: "color 0.2s" }}
@@ -366,10 +365,10 @@ export default function UNFSWebsite() {
           </div>
 
           {/* Hamburger button (mobile) */}
-          <button className="unfs-nav-hamburger" onClick={() => setMobileNav(true)} style={{ background: "none", border: "none", cursor: "pointer", flexDirection: "column", gap: 5, padding: 4 }} aria-label="Open navigation">
-            <span style={{ display: "block", width: 24, height: 2, background: COLORS.white, borderRadius: 2 }} />
-            <span style={{ display: "block", width: 24, height: 2, background: COLORS.white, borderRadius: 2 }} />
-            <span style={{ display: "block", width: 16, height: 2, background: COLORS.gold, borderRadius: 2 }} />
+          <button className="unfs-nav-hamburger" onClick={() => setMobileNav(!mobileNav)} style={{ background: "none", border: "none", cursor: "pointer", flexDirection: "column", gap: 5, padding: 4, position: "relative", zIndex: 1001 }} aria-label={mobileNav ? "Close navigation" : "Open navigation"}>
+            <span style={{ display: "block", width: 24, height: 2, background: COLORS.white, borderRadius: 2, transform: mobileNav ? "translateY(7px) rotate(45deg)" : "none", transition: "transform 0.3s cubic-bezier(0.16,1,0.3,1)" }} />
+            <span style={{ display: "block", width: 24, height: 2, background: COLORS.white, borderRadius: 2, opacity: mobileNav ? 0 : 1, transition: "opacity 0.2s" }} />
+            <span style={{ display: "block", width: mobileNav ? 24 : 16, height: 2, background: mobileNav ? COLORS.white : COLORS.gold, borderRadius: 2, transform: mobileNav ? "translateY(-7px) rotate(-45deg)" : "none", transition: "all 0.3s cubic-bezier(0.16,1,0.3,1)" }} />
           </button>
         </div>
       </nav>
