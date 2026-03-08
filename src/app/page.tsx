@@ -239,9 +239,21 @@ export default function UNFSWebsite() {
     return () => clearInterval(interval);
   }, [galleryYear]);
 
+  // Auto-close mobile nav on resize to desktop
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 768) {
+        setMobileNav(false);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const scrollTo = (id: string) => {
     setActiveSection(id);
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    setMobileNav(false);
   };
 
   const navItems = [
