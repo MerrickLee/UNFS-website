@@ -661,8 +661,13 @@ export default function UNFSWebsite() {
               </button>
             ))}
           </div>
-          <div style={{ fontFamily: "'Source Serif 4', serif", fontSize: 12, color: "rgba(255,255,255,0.3)" }}>
-            © {new Date().getFullYear()} UNFS Foundation. All rights reserved.
+          <div style={{ display: "flex", gap: 24, flexWrap: "wrap", alignItems: "center", justifyContent: "space-between" }}>
+            <div style={{ fontFamily: "'Source Serif 4', serif", fontSize: 12, color: "rgba(255,255,255,0.3)" }}>
+              © {new Date().getFullYear()} UNFS Foundation. All rights reserved.
+            </div>
+            <div style={{ fontFamily: "'Source Serif 4', serif", fontSize: 12, color: "rgba(255,255,255,0.3)" }}>
+              Powered by <a href="https://croesave.com" target="_blank" rel="noopener noreferrer" style={{ color: COLORS.gold, textDecoration: "none", transition: "opacity 0.2s" }} onMouseEnter={e => e.currentTarget.style.opacity = "0.8"} onMouseLeave={e => e.currentTarget.style.opacity = "1"}>Croes Ave</a>
+            </div>
           </div>
         </div>
       </footer>
