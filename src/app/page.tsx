@@ -46,6 +46,16 @@ const COLORS = {
 const LOGO_URL =
   "https://i.imgur.com/placeholder.png"; // Will be replaced dynamically
 
+const PHOTOS_2023 = [
+  "https://lh3.googleusercontent.com/pw/AP1GczPM0EKOTgEGOFCZlxiP_p0D6JptNS4znJXh5D0WFChn-59FN7BlF6OtPJ0FNy0aVUYskVYVX-D2ElHUXvryBqte06kAsVVoqijELDPOmUcZi1sqeKhRaCJDQ6beTG7cs1nHk1NnIxfU2bJGxXEEaA3cJQ=w1000-h666-s-no-gm?authuser=0",
+  "https://lh3.googleusercontent.com/pw/AP1GczNJrx0XLQLRS_WSEbek2Slvtp2uSljn9uIGVPk1CaK_IH_3lhLrfN2Di_H7LoMgHJYcvxf2IoxHOyH5rj89xc7nFAV5RTRTqDSnKXhI0c2eOLHK1TxmO7C2GMLUi6NPBOCLGy1Dfejpm8IE3hMfZdbNKg=w1000-h666-s-no-gm?authuser=0",
+  "https://lh3.googleusercontent.com/pw/AP1GczObh__mphycO1_Z7gkLA9Ce1WEDYq2kPTaw_EI2AtInGxZyzPvdyhGBIuj8QQWP1eyZq10Je5LFliv7My5JCoKvR01LHqMJpgB2d434z5wz2AqxgyWN5bGPl7SpKz0kbje7kx_c7R-rrqJH5ZkFpUe7FA=w1000-h666-s-no-gm?authuser=0",
+  "https://lh3.googleusercontent.com/pw/AP1GczMqiGRSorax8n1lty_aYBBpHWksVwWKQwP5mIEaW41x-DlhY7Zi4RlJeirlGzVfcV5Bx6uAznZX8XhzokSGi3lOWxj8N_zPbncMfp_22BYSUmV5A1yNqxxKyJXu5s5Ws72XWN4dHbVIVZiexWoK-rViYg=w1000-h666-s-no-gm?authuser=0",
+  "https://lh3.googleusercontent.com/pw/AP1GczOMZdh7WHgx12YzEe1VuEtU4JDhot1LiUYNMqujBTxO1--mtjA98a-MNAqE7hiOcpaP8a20hqdlZv25YJYBmAJOwQE3XKnfsCCFOJ7ANRLTBSkyWuk06D7iUEEdfFENRCFLGAGcdUdOD3FYAOCMLnY-QQ=w1000-h666-s-no-gm?authuser=0",
+  "https://lh3.googleusercontent.com/pw/AP1GczP-lMPkFYhdRarYUnG9cutUDuhCnrYVF_hhSVV_BcInkoJ24rH8J3GelarYNyEx56YGIeIZGShOk67lv2gA89Tfdf0jHu9Vp4IE3oD4ZddxEZ4Wh-omimcrqT_OaLE1yqG6XsZLUaFQVT5ILfjIEwfphg=w1000-h666-s-no-gm?authuser=0",
+  "https://lh3.googleusercontent.com/pw/AP1GczOrWs88-BCmnVusvHo-anGD_YYbS86j7SzwSBb2I9O0zj3eeG1-HDsKOaaNF6XoEZsj048nuFZ5sk3fbpSwwwndiw003wJvzjJGD62QnI359WYGyMVBfhaloZwvoNCyCIEq4160TJBDE1d7okGQiLtwZg=w1000-h819-s-no-gm?authuser=0"
+];
+
 // Topographic SVG pattern
 const TopoPattern = ({ opacity = 0.04, color = "#fff" }: { opacity?: number; color?: string }) => (
   <svg
@@ -171,6 +181,10 @@ export default function UNFSWebsite() {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [contactSubmitted, setContactSubmitted] = useState(false);
   const [logoSrc, setLogoSrc] = useState("");
+  
+  // Gallery Modal State
+  const [galleryOpen, setGalleryOpen] = useState(false);
+  const [galleryIndex, setGalleryIndex] = useState(0);
 
   useEffect(() => {
     const link = document.createElement("link");
@@ -183,6 +197,17 @@ export default function UNFSWebsite() {
     setLogoSrc("/logo.png");
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Auto-slide effect for gallery
+  useEffect(() => {
+    let interval: any;
+    if (galleryOpen) {
+      interval = setInterval(() => {
+        setGalleryIndex((prev) => (prev + 1) % PHOTOS_2023.length);
+      }, 2000);
+    }
+    return () => clearInterval(interval);
+  }, [galleryOpen]);
 
   const scrollTo = (id: string) => {
     setActiveSection(id);
@@ -241,6 +266,38 @@ export default function UNFSWebsite() {
         ))}
         <button onClick={() => scrollTo("register")} style={{ marginTop: 24, background: COLORS.gold, border: "none", borderRadius: 6, color: COLORS.white, fontFamily: "'Barlow Condensed', sans-serif", fontSize: 15, fontWeight: 700, letterSpacing: 2, textTransform: "uppercase", padding: "14px 32px", cursor: "pointer" }}>Register for 2026</button>
       </div>
+
+      {/* Gallery Modal Overlay */}
+      {galleryOpen && (
+        <div style={{ position: "fixed", top: 0, left: 0, right: 0, bottom: 0, zIndex: 2000, background: "rgba(15,31,48,0.95)", backdropFilter: "blur(8px)", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
+          <button onClick={() => setGalleryOpen(false)} style={{ position: "absolute", top: 24, right: 32, background: "none", border: "none", color: COLORS.white, fontSize: 36, cursor: "pointer", zIndex: 2001 }}>✕</button>
+          
+          <div style={{ width: "90%", maxWidth: 1000, height: "75vh", position: "relative", display: "flex", alignItems: "center", justifyContent: "center" }}>
+            {/* Using Next Image for optimized rendering, unoptimized to allow external Google urls without config */}
+            <Image 
+              src={PHOTOS_2023[galleryIndex]} 
+              alt={`UNFS 2023 Retreat Photo ${galleryIndex + 1}`} 
+              fill 
+              unoptimized
+              style={{ objectFit: "contain", transition: "opacity 0.4s ease" }}
+            />
+          </div>
+          
+          <div style={{ display: "flex", gap: 12, marginTop: 24 }}>
+            {PHOTOS_2023.map((_, i) => (
+              <button 
+                key={i} 
+                onClick={() => setGalleryIndex(i)}
+                style={{ width: 12, height: 12, borderRadius: "50%", padding: 0, border: "none", background: i === galleryIndex ? COLORS.gold : "rgba(255,255,255,0.3)", cursor: "pointer", transition: "background 0.3s" }}
+                aria-label={`Go to slide ${i + 1}`}
+              />
+            ))}
+          </div>
+          <div style={{ fontFamily: "'Barlow Condensed', sans-serif", color: "white", marginTop: 16, letterSpacing: 2, textTransform: "uppercase" }}>
+            Growing Strong • 2023 Retreat
+          </div>
+        </div>
+      )}
 
       {/* NAV */}
       <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 1000, background: scrolled ? "rgba(27,47,69,0.97)" : "transparent", backdropFilter: scrolled ? "blur(12px)" : "none", transition: "all 0.4s", padding: scrolled ? "10px 24px" : "16px 24px", borderBottom: scrolled ? `1px solid rgba(200,150,74,0.2)` : "none" }}>
@@ -398,11 +455,12 @@ export default function UNFSWebsite() {
           {sectionTitle("Memories", "Photo Gallery")}
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: 12 }}>
             {[{ year: "2022", label: "The Beginning", color: COLORS.navy, span: 2 }, { year: "2023", label: "Growing Strong", color: COLORS.forest, span: 1 }, { year: "2025", label: "On The Wheel", color: COLORS.warmGray, span: 1 }].map((item, i) => (
-              <div key={i} style={{ background: `linear-gradient(135deg, ${item.color}, ${item.color}dd)`, borderRadius: 12, aspectRatio: item.span === 2 ? "1.5/1" : "1/1", gridColumn: `span ${item.span}`, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", position: "relative", overflow: "hidden", cursor: "pointer", transition: "transform 0.3s" }} onMouseEnter={e => e.currentTarget.style.transform = "scale(1.02)"} onMouseLeave={e => e.currentTarget.style.transform = "scale(1)"}>
+              <div key={i} onClick={() => { if (item.year === "2023") { setGalleryIndex(0); setGalleryOpen(true); } }} style={{ background: `linear-gradient(135deg, ${item.color}, ${item.color}dd)`, borderRadius: 12, aspectRatio: item.span === 2 ? "1.5/1" : "1/1", gridColumn: `span ${item.span}`, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", position: "relative", overflow: "hidden", cursor: item.year === "2023" ? "pointer" : "default", transition: "transform 0.3s" }} onMouseEnter={e => { if (item.year === "2023") e.currentTarget.style.transform = "scale(1.02)" }} onMouseLeave={e => e.currentTarget.style.transform = "scale(1)"}>
                 <TopoPattern opacity={0.08} />
                 <div style={{ position: "relative", zIndex: 1, textAlign: "center" }}>
                   <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 48, fontWeight: 900, color: "rgba(255,255,255,0.15)" }}>{item.year}</div>
                   <div style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 14, letterSpacing: 3, textTransform: "uppercase", color: "rgba(255,255,255,0.8)", fontWeight: 600 }}>{item.label}</div>
+                  {item.year === "2023" && <div style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 11, color: COLORS.gold, marginTop: 8, letterSpacing: 1, textTransform: "uppercase" }}>Click to view photos</div>}
                 </div>
               </div>
             ))}
