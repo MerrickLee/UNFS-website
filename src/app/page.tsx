@@ -56,6 +56,23 @@ const PHOTOS_2023 = [
   "https://lh3.googleusercontent.com/pw/AP1GczOrWs88-BCmnVusvHo-anGD_YYbS86j7SzwSBb2I9O0zj3eeG1-HDsKOaaNF6XoEZsj048nuFZ5sk3fbpSwwwndiw003wJvzjJGD62QnI359WYGyMVBfhaloZwvoNCyCIEq4160TJBDE1d7okGQiLtwZg=w1000-h819-s-no-gm?authuser=0"
 ];
 
+const PHOTOS_2025 = [
+  "https://lh3.googleusercontent.com/pw/AP1GczMnAns3RKcXnKwFqDA7AKCBvUOPm92J354cA5470Lnxoc29AGGwh3GKa0Ml9hMAWD_avn_gneqhUUFuH6xvHtCOcLVn1VVRuCce8BOAjVYnX_u19z9pLVocvnMiEptYB6qxPvgXGFc1q8r0YNqnX2Kp2Q=w1000-h666-s-no-gm?authuser=0",
+  "https://lh3.googleusercontent.com/pw/AP1GczPOt9-yHzPHMDkHV3hGm4Y_MnEOs39JGTuQjfGpo12DujWpz-nRe6wCAbF3aCa_Ci4s9N-oBiNIIopWZMgwJkdLDTEFh3KeDz_zkmlsaKc8ZKN8yi-F70YgcK7qYUAB3D46wGQcE46_qxg-r3OLh2uh5A=w798-h968-s-no-gm?authuser=0",
+  "https://lh3.googleusercontent.com/pw/AP1GczMRzn1d8e_TiKxZv8vh4qpGdXJFiJQqPqiwe9QcjPJlPJr9tQ7ueizV3JxUlnkkhiXoYPoq5ppGDo2LfrWr8qt_6jgHlvXDrHQ6CCVRHlAQSaz7lk3mfy8RJ2jILvqzVqZAWLvOJsMLrdG33zEmXO5fSw=w1080-h608-s-no-gm?authuser=0",
+  "https://lh3.googleusercontent.com/pw/AP1GczN6XUcpRWsJ5Hzh1rFIZA8on2Prm0XS641TmZtgj2SWdl8M9r45eFJqrEWT4ydM1LAzNwo4FdtJpAvVkStVRWTFf0MPnD3BE1nlMEo4SAMQk8coPC-ojfjGZpZW0Q24ANSeRAknSEvOcu_kKO_eL1kPxw=w1080-h810-s-no-gm?authuser=0",
+  "https://lh3.googleusercontent.com/pw/AP1GczNCRXWTpfIssizU6PUt-61uoj8y9iwIekiBpmUjnpRKnwM5hFcBxmwkQTDrrkaoPX3E5pRSU4FKZPuEGlb3_3PWLfmiU2_i5oXScXtxoeGzgmnYEzLFQW_SpvalfYeI-Qea1uxWki1sUQpdqkoL-LbqeQ=w1080-h810-s-no-gm?authuser=0",
+  "https://lh3.googleusercontent.com/pw/AP1GczOIKjeCtsNmnFyuFpX1llvwlmjelRV84sdXevq0RezFn8SaiVfRP2nX485SEccJ4zH-o3vb0fYXwbgm9ki7NYDyI6XaHs-_MBYzDXUQhADrurbUSpgCwPsNTMi_khQSprs2DgHkrssIopwMMWr3_UJiJQ=w726-h968-s-no-gm?authuser=0",
+  "https://lh3.googleusercontent.com/pw/AP1GczOUxhhDw_M1i1fWQFuoZuhkl6rJnOZccNTeziGnGvsCiL2Vg1SVI1e1pm9A4IYDajt6bxGkxpjfO4jZzC6xNqPx79A02ZBLjw3lBvI9nGDU6-tr6m2ogzsjVM1TQqboVM1loiqyjenOmZUae2Fea2Qq-g=w1080-h810-s-no-gm?authuser=0",
+  "https://lh3.googleusercontent.com/pw/AP1GczPukqlmbzyPKJYXGtg96qjJZe3iZuryNt_mS_EYQ1p6IJdLl8vgmmu1rMR-TpPq6IONnFOeLVBMZvxS2oRGB-y4hLI2FJ7GGh-edcUnar6GwVShniUUepVPgYtJMoC-gAPN2P3PG8iygCCUafnIxHw7vg=w1080-h810-s-no-gm?authuser=0",
+  "https://lh3.googleusercontent.com/pw/AP1GczMmAghi4pcJIBGxnd4rDVXFWteUGCpesGmWfwO9d0NvEucNfaB2lv4uovoUjNhHtKjCDe_oT3dC2tIq65z-RoTzTHEj_GKnH00q4MeW_MZdERiizmbyzCV34RdyUSOFo6YmHO61OVn247vKsg0s6rvmSg=w726-h968-s-no-gm?authuser=0",
+  "https://lh3.googleusercontent.com/pw/AP1GczMcDRPTFyawoylpDKShfVWjygdMukgj2SO2OuJhUtT4IAfQKZsWOaH2L5kGQX8SUKgc4NfnngaGfIbvx0UA9vkpzZqu3W-7dzjEX2dt231ptdKA8ro4zCkj7XySDnPlavZgzzf_D8lJW-05B0crKD5jBg=w726-h968-s-no-gm?authuser=0",
+  "https://lh3.googleusercontent.com/pw/AP1GczNydm0kzfyr_Bqddh4kLfvuXTA4eV62RI0345TFGit3EI32ovzc7aEQ2meAuulZ01VIGhBgjOV9mq95vYoQyETe8Wewu49u67GYw1yOpojKF4V770-sG1LvkNPofZL2FibLCCwixZIXC8HQn5jbdTqHPg=w1080-h810-s-no-gm?authuser=0",
+  "https://lh3.googleusercontent.com/pw/AP1GczPbYa35YUPhMa6-gLcnw94qj7EIw9wd49LijKMZXD4VlDLORJ1kjj5lvrkmg1MGuNS0pfXzp3LhuBG19HZvhd1O7KhIPDg9rzalQ5ygus5g7UOLz8aFnX5ct61OAkRXETDwN5utbzBDAaAD25qgmIznaw=w1000-h666-s-no-gm?authuser=0",
+  "https://lh3.googleusercontent.com/pw/AP1GczOh2lZZWtj8mnRSUqyKDG1q34BXp-3-NVrdYXXIXMIl7NS7HfCkHa2QCyArKEH802o6CDRWeYmS_P3LQQIDg7eS_Bpf6WIkOxCtCj-JWUthoy4CyCqnxeuiW7Ms_BxMhqE1fdMI2bcg8hv34PTcZ7EiyQ=w1000-h666-s-no-gm?authuser=0",
+  "https://lh3.googleusercontent.com/pw/AP1GczO4vhtFF3rOpZpiKPVXkoHiZaHKQLCFAVVpt9Q2xsoU5L9vTj6DO2I1zm3aZvPI3t6xg4Mme1fry4FGLktVnBiu2EUdDWnpV-tuRHREn9rTimAUv6l0YLKdlwBdrvgh4h9FKIcup-1--9EFGHr-k-5ykA=w1000-h666-s-no-gm?authuser=0"
+];
+
 // Topographic SVG pattern
 const TopoPattern = ({ opacity = 0.04, color = "#fff" }: { opacity?: number; color?: string }) => (
   <svg
@@ -183,7 +200,7 @@ export default function UNFSWebsite() {
   const [logoSrc, setLogoSrc] = useState("");
   
   // Gallery Modal State
-  const [galleryOpen, setGalleryOpen] = useState(false);
+  const [galleryYear, setGalleryYear] = useState<string | null>(null);
   const [galleryIndex, setGalleryIndex] = useState(0);
 
   useEffect(() => {
@@ -201,13 +218,14 @@ export default function UNFSWebsite() {
   // Auto-slide effect for gallery
   useEffect(() => {
     let interval: any;
-    if (galleryOpen) {
+    if (galleryYear) {
+      const activePhotos = galleryYear === "2023" ? PHOTOS_2023 : PHOTOS_2025;
       interval = setInterval(() => {
-        setGalleryIndex((prev) => (prev + 1) % PHOTOS_2023.length);
+        setGalleryIndex((prev) => (prev + 1) % activePhotos.length);
       }, 2000);
     }
     return () => clearInterval(interval);
-  }, [galleryOpen]);
+  }, [galleryYear]);
 
   const scrollTo = (id: string) => {
     setActiveSection(id);
@@ -268,23 +286,23 @@ export default function UNFSWebsite() {
       </div>
 
       {/* Gallery Modal Overlay */}
-      {galleryOpen && (
+      {galleryYear && (
         <div style={{ position: "fixed", top: 0, left: 0, right: 0, bottom: 0, zIndex: 2000, background: "rgba(15,31,48,0.95)", backdropFilter: "blur(8px)", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
-          <button onClick={() => setGalleryOpen(false)} style={{ position: "absolute", top: 24, right: 32, background: "none", border: "none", color: COLORS.white, fontSize: 36, cursor: "pointer", zIndex: 2001 }}>✕</button>
+          <button onClick={() => setGalleryYear(null)} style={{ position: "absolute", top: 24, right: 32, background: "none", border: "none", color: COLORS.white, fontSize: 36, cursor: "pointer", zIndex: 2001 }}>✕</button>
           
           <div style={{ width: "90%", maxWidth: 1000, height: "75vh", position: "relative", display: "flex", alignItems: "center", justifyContent: "center" }}>
             {/* Using Next Image for optimized rendering, unoptimized to allow external Google urls without config */}
             <Image 
-              src={PHOTOS_2023[galleryIndex]} 
-              alt={`UNFS 2023 Retreat Photo ${galleryIndex + 1}`} 
+              src={(galleryYear === "2023" ? PHOTOS_2023 : PHOTOS_2025)[galleryIndex]} 
+              alt={`UNFS ${galleryYear} Retreat Photo ${galleryIndex + 1}`} 
               fill 
               unoptimized
               style={{ objectFit: "contain", transition: "opacity 0.4s ease" }}
             />
           </div>
           
-          <div style={{ display: "flex", gap: 12, marginTop: 24 }}>
-            {PHOTOS_2023.map((_, i) => (
+          <div style={{ display: "flex", gap: 12, marginTop: 24, flexWrap: "wrap", justifyContent: "center", maxWidth: "80%" }}>
+            {(galleryYear === "2023" ? PHOTOS_2023 : PHOTOS_2025).map((_, i) => (
               <button 
                 key={i} 
                 onClick={() => setGalleryIndex(i)}
@@ -294,7 +312,7 @@ export default function UNFSWebsite() {
             ))}
           </div>
           <div style={{ fontFamily: "'Barlow Condensed', sans-serif", color: "white", marginTop: 16, letterSpacing: 2, textTransform: "uppercase" }}>
-            Growing Strong • 2023 Retreat
+            {galleryYear === "2023" ? "Growing Strong • 2023 Retreat" : "On The Wheel • 2025 Retreat"}
           </div>
         </div>
       )}
@@ -454,16 +472,18 @@ export default function UNFSWebsite() {
         <div style={container}>
           {sectionTitle("Memories", "Photo Gallery")}
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: 12 }}>
-            {[{ year: "2022", label: "The Beginning", color: COLORS.navy, span: 2 }, { year: "2023", label: "Growing Strong", color: COLORS.forest, span: 1 }, { year: "2025", label: "On The Wheel", color: COLORS.warmGray, span: 1 }].map((item, i) => (
-              <div key={i} onClick={() => { if (item.year === "2023") { setGalleryIndex(0); setGalleryOpen(true); } }} style={{ background: `linear-gradient(135deg, ${item.color}, ${item.color}dd)`, borderRadius: 12, aspectRatio: item.span === 2 ? "1.5/1" : "1/1", gridColumn: `span ${item.span}`, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", position: "relative", overflow: "hidden", cursor: item.year === "2023" ? "pointer" : "default", transition: "transform 0.3s" }} onMouseEnter={e => { if (item.year === "2023") e.currentTarget.style.transform = "scale(1.02)" }} onMouseLeave={e => e.currentTarget.style.transform = "scale(1)"}>
+            {[{ year: "2022", label: "The Beginning", color: COLORS.navy, span: 2 }, { year: "2023", label: "Growing Strong", color: COLORS.forest, span: 1 }, { year: "2025", label: "On The Wheel", color: COLORS.warmGray, span: 1 }].map((item, i) => {
+              const hasPhotos = item.year === "2023" || item.year === "2025";
+              return (
+              <div key={i} onClick={() => { if (hasPhotos) { setGalleryIndex(0); setGalleryYear(item.year); } }} style={{ background: `linear-gradient(135deg, ${item.color}, ${item.color}dd)`, borderRadius: 12, aspectRatio: item.span === 2 ? "1.5/1" : "1/1", gridColumn: `span ${item.span}`, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", position: "relative", overflow: "hidden", cursor: hasPhotos ? "pointer" : "default", transition: "transform 0.3s" }} onMouseEnter={e => { if (hasPhotos) e.currentTarget.style.transform = "scale(1.02)" }} onMouseLeave={e => e.currentTarget.style.transform = "scale(1)"}>
                 <TopoPattern opacity={0.08} />
                 <div style={{ position: "relative", zIndex: 1, textAlign: "center" }}>
                   <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 48, fontWeight: 900, color: "rgba(255,255,255,0.15)" }}>{item.year}</div>
                   <div style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 14, letterSpacing: 3, textTransform: "uppercase", color: "rgba(255,255,255,0.8)", fontWeight: 600 }}>{item.label}</div>
-                  {item.year === "2023" && <div style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 11, color: COLORS.gold, marginTop: 8, letterSpacing: 1, textTransform: "uppercase" }}>Click to view photos</div>}
+                  {hasPhotos && <div style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 11, color: COLORS.gold, marginTop: 8, letterSpacing: 1, textTransform: "uppercase" }}>Click to view photos</div>}
                 </div>
               </div>
-            ))}
+            )})}
           </div>
           <p style={{ textAlign: "center", fontFamily: "'Source Serif 4', serif", fontSize: 15, color: COLORS.warmGray, marginTop: 32, fontStyle: "italic" }}>
             Photos from past retreats coming soon.
