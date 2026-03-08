@@ -210,7 +210,7 @@ export default function UNFSWebsite() {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [contactSubmitted, setContactSubmitted] = useState(false);
   const [logoSrc, setLogoSrc] = useState("");
-  
+
   // Gallery Modal State
   const [galleryYear, setGalleryYear] = useState<string | null>(null);
   const [galleryIndex, setGalleryIndex] = useState(0);
@@ -315,22 +315,22 @@ export default function UNFSWebsite() {
         return (
           <div style={{ position: "fixed", top: 0, left: 0, right: 0, bottom: 0, zIndex: 2000, background: "rgba(15,31,48,0.95)", backdropFilter: "blur(8px)", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
             <button onClick={() => setGalleryYear(null)} style={{ position: "absolute", top: 24, right: 32, background: "none", border: "none", color: COLORS.white, fontSize: 36, cursor: "pointer", zIndex: 2001 }}>✕</button>
-            
+
             <div style={{ width: "90%", maxWidth: 1000, height: "75vh", position: "relative", display: "flex", alignItems: "center", justifyContent: "center" }}>
               {/* Using Next Image for optimized rendering, unoptimized to allow external Google urls without config */}
-              <Image 
-                src={activePhotos[galleryIndex]} 
-                alt={`UNFS ${galleryYear} Retreat Photo ${galleryIndex + 1}`} 
-                fill 
+              <Image
+                src={activePhotos[galleryIndex]}
+                alt={`UNFS ${galleryYear} Retreat Photo ${galleryIndex + 1}`}
+                fill
                 unoptimized
                 style={{ objectFit: "contain", transition: "opacity 0.4s ease" }}
               />
             </div>
-            
+
             <div style={{ display: "flex", gap: 12, marginTop: 24, flexWrap: "wrap", justifyContent: "center", maxWidth: "80%" }}>
               {activePhotos.map((_, i) => (
-                <button 
-                  key={i} 
+                <button
+                  key={i}
                   onClick={() => setGalleryIndex(i)}
                   style={{ width: 12, height: 12, borderRadius: "50%", padding: 0, border: "none", background: i === galleryIndex ? COLORS.gold : "rgba(255,255,255,0.3)", cursor: "pointer", transition: "background 0.3s" }}
                   aria-label={`Go to slide ${i + 1}`}
@@ -391,7 +391,7 @@ export default function UNFSWebsite() {
           <div style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 22, fontWeight: 500, color: COLORS.gold, letterSpacing: 4, textTransform: "uppercase", margin: "16px 0 32px" }}>
             FOUNDATION
           </div>
-          <div style={{ width: 180, height: 180, borderRadius: 16, margin: "0 auto 28px", boxShadow: "0 8px 40px rgba(0,0,0,0.4)", border: `2px solid rgba(200,150,74,0.3)`, overflow: "hidden", position: "relative" }}>
+          <div style={{ width: 340, height: 340, borderRadius: 16, margin: "0 auto 32px", boxShadow: "0 8px 40px rgba(0,0,0,0.4)", border: `2px solid rgba(200,150,74,0.3)`, overflow: "hidden", position: "relative" }}>
             <Image src="/unfs-logo.png" alt="UNFS Foundation Logo" fill style={{ objectFit: "cover" }} priority />
           </div>
           <p style={{ fontFamily: "'Source Serif 4', serif", fontSize: 18, color: "rgba(255,255,255,0.65)", lineHeight: 1.7, maxWidth: 560, margin: "0 auto 40px" }}>
@@ -426,6 +426,12 @@ export default function UNFSWebsite() {
             <div style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 12, letterSpacing: 3, textTransform: "uppercase", color: COLORS.gold, marginBottom: 12, fontWeight: 600 }}>Our Mission</div>
             <p style={{ fontFamily: "'Source Serif 4', serif", fontSize: 17, color: COLORS.charcoal, lineHeight: 1.8, margin: 0, fontStyle: "italic" }}>
               The Uncle Nephew Father Son (UNFS) Mentoring Program empowers young men to reach their full potential by providing positive male role models from their family and community. We nurture responsible, respectful, and resilient individuals by teaching timeless principles of manhood, breaking down stereotypes, and fostering a robust, productive future for the next generation.
+            </p>
+          </div>
+          <div style={{ background: COLORS.white, borderLeft: `4px solid ${COLORS.gold}`, borderRadius: "0 12px 12px 0", padding: "32px 36px", marginBottom: 48, boxShadow: "0 2px 16px rgba(0,0,0,0.04)" }}>
+            <div style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 12, letterSpacing: 3, textTransform: "uppercase", color: COLORS.gold, marginBottom: 12, fontWeight: 600 }}>Our Goals</div>
+            <p style={{ fontFamily: "'Source Serif 4', serif", fontSize: 17, color: COLORS.charcoal, lineHeight: 1.8, margin: 0, fontStyle: "italic" }}>
+              To equip young men with the necessary life skills, leadership training, and continuous mentorship to navigate challenges effectively. We strive to build strong community bonds and prepare resilient, compassionate leaders for tomorrow.
             </p>
           </div>
           <div style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 13, letterSpacing: 4, textTransform: "uppercase", color: COLORS.gold, marginBottom: 24, fontWeight: 600, textAlign: "center" }}>Program Pillars</div>
@@ -506,15 +512,16 @@ export default function UNFSWebsite() {
             ].map((item, i) => {
               const hasPhotos = item.year === "2022" || item.year === "2023" || item.year === "2025";
               return (
-              <div key={i} onClick={() => { if (hasPhotos) { setGalleryIndex(0); setGalleryYear(item.year); } }} style={{ background: `linear-gradient(135deg, ${item.color}, ${item.color}dd)`, borderRadius: 12, aspectRatio: item.span === 2 ? "1.5/1" : "1/1", gridColumn: `span ${item.span}`, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", position: "relative", overflow: "hidden", cursor: hasPhotos ? "pointer" : "default", transition: "transform 0.3s" }} onMouseEnter={e => { if (hasPhotos) e.currentTarget.style.transform = "scale(1.02)" }} onMouseLeave={e => e.currentTarget.style.transform = "scale(1)"}>
-                <TopoPattern opacity={0.08} />
-                <div style={{ position: "relative", zIndex: 1, textAlign: "center" }}>
-                  <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 48, fontWeight: 900, color: "rgba(255,255,255,0.15)" }}>{item.year}</div>
-                  <div style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 14, letterSpacing: 3, textTransform: "uppercase", color: "rgba(255,255,255,0.8)", fontWeight: 600 }}>{item.label}</div>
-                  {hasPhotos && <div style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 11, color: COLORS.gold, marginTop: 8, letterSpacing: 1, textTransform: "uppercase" }}>Click to view photos</div>}
+                <div key={i} onClick={() => { if (hasPhotos) { setGalleryIndex(0); setGalleryYear(item.year); } }} style={{ background: `linear-gradient(135deg, ${item.color}, ${item.color}dd)`, borderRadius: 12, aspectRatio: item.span === 2 ? "1.5/1" : "1/1", gridColumn: `span ${item.span}`, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", position: "relative", overflow: "hidden", cursor: hasPhotos ? "pointer" : "default", transition: "transform 0.3s" }} onMouseEnter={e => { if (hasPhotos) e.currentTarget.style.transform = "scale(1.02)" }} onMouseLeave={e => e.currentTarget.style.transform = "scale(1)"}>
+                  <TopoPattern opacity={0.08} />
+                  <div style={{ position: "relative", zIndex: 1, textAlign: "center" }}>
+                    <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 48, fontWeight: 900, color: "rgba(255,255,255,0.15)" }}>{item.year}</div>
+                    <div style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 14, letterSpacing: 3, textTransform: "uppercase", color: "rgba(255,255,255,0.8)", fontWeight: 600 }}>{item.label}</div>
+                    {hasPhotos && <div style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 11, color: COLORS.gold, marginTop: 8, letterSpacing: 1, textTransform: "uppercase" }}>Click to view photos</div>}
+                  </div>
                 </div>
-              </div>
-            )})}
+              )
+            })}
           </div>
         </div>
       </section>
@@ -594,7 +601,7 @@ export default function UNFSWebsite() {
       {/* FAQ */}
       <section id="faq" style={sectionBg()}>
         <div style={{ ...container, maxWidth: 720 }}>
-          {sectionTitle("Questions?", "Frequently Asked")}
+          {sectionTitle("Questions?", "Frequently Asked Questions")}
           <FAQItem q="Who can attend the UNFS retreat?" a="The retreat is designed for uncles, nephews, fathers, sons, and positive male mentors from the family and community. All generations are welcome." />
           <FAQItem q="What is the cost to attend?" a="Costs vary each year and cover cabin accommodations and shared meals. Contact us for the latest pricing and scholarship opportunities." />
           <FAQItem q="What should I bring?" a="Bring comfortable outdoor clothing, personal toiletries, a sleeping bag or linens if preferred, and a VA state fishing license if you plan to fish Saturday morning. Don't forget your UNFS tee shirt!" />
