@@ -47,15 +47,15 @@ const LOGO_URL =
   "https://i.imgur.com/placeholder.png"; // Will be replaced dynamically
 
 const PHOTOS_2022 = [
-  "https://lh3.googleusercontent.com/pw/AP1GczPzDAPwuj7QrAybtsPeYCzYPEgdaGnn5mJDzvq6XTz8Jcl8LIDKKZj0gDKYzt1ZHUnckoDcORrfjxu8ff6cHzIfWK0HTt72cC66oTAoIOfJpyyX-WlpB8I9BU2gYcMBsVaWhthPOgEP6ZAxygeVdF8gLw=w618-h824-s-no-gm?authuser=0",
-  "https://lh3.googleusercontent.com/pw/AP1GczPEM0WaXWV1Kx_iuk68mCQ-hS2IOVl8OtyjuNabk3F_eD98xs4DGEmunE45_KzjB90O0ndg0oE-rWQmiAMEy-qrxsTijnHeGyv02XuuEu8KeNszA6Ze0lGoTN5Tk3iiyDNSE19T6r2wxlgtRoQmHvDGTA=w1099-h824-s-no-gm?authuser=0",
-  "https://lh3.googleusercontent.com/pw/AP1GczMP8C2u-fQHoXKRGOHAceNN3Iajai2dEhNMf4MQtE1pwyGyS3KdhsUQqNFPrDo9Nsvs8trd2CXeEVoK478o4llpHmz6JdfLz-bUe1MAU0bpHfxCz4Kx06VDKw0mBJNoKHzA9o_CnweQsbPM_BtnshmfKQ=w1099-h824-s-no-gm?authuser=0",
-  "https://lh3.googleusercontent.com/pw/AP1GczMScsObPiOHH2-nU341iuUcSCnY90Rxrh98rlZ_k1e3x1VkwLgewyOgwmCaWE-XGAgQi68b_JuzoLFgHlO9cYhB86hG7LmNbxuyqsxwuZYCPu3Il1ddIB24YaEcu0422M-s8iWCNjuX9ksC6a3sjduxXQ=w1099-h824-s-no-gm?authuser=0",
-  "https://lh3.googleusercontent.com/pw/AP1GczM7vPslKSN5kJi3ytJLQEgFBq5oVjtqCvu0eV5uHAnwUWe6SKHP71vfKuuSDzmdxl6_mTGU2GXGlotmx_7sHFhs1HRAgQRi6CtgiKBScXgc-Z2mhhC1bORk8HGx-8VRc-yz04qVKbo4OIMclN0UAUBkcg=w1099-h824-s-no-gm?authuser=0",
-  "https://lh3.googleusercontent.com/pw/AP1GczMI_cCk8fH2HrgbSTo0LIXRm70BFFMmMOc9hi26JUqXEs3ZTRfqmX_-Ym4pGh6QlH2Qn5F47r_J-TOPSAwWJPaJE7t6UOYQGOsN-rN3Q9WJfU_94b9pKL67h87aeRFvUCTJi9bbQuheD0i6hEcqL9vV_g=w1099-h824-s-no-gm?authuser=0",
-  "https://lh3.googleusercontent.com/pw/AP1GczPpjkszBZOALZLX8ngFpMZFTbYFKdAHOGRaCzhiaQqLt2tV22ivjqF7iMehITBaNcnyjyKKHo3Z_4JtUmZK2iNtl054N07o9ycD5C1EAD-fbiDoI99Y5e6AKvhXxLK54cQwgq2PMdKLs5PROU9vV9Rh3g=w1099-h824-s-no-gm?authuser=0",
-  "https://lh3.googleusercontent.com/pw/AP1GczPsZIx4vM-aGWJi6jdYLbW9KwDKUzPiGsPaPDs-wTAlc0-wt4cnYXZVc9Y8V-kGKLyq5n3NFzrwmG7dD_QLYYfseYzr5ys-S4cQNe4TarJvH_buParX88koxnCHUBSUxEOhp2RnzttBKPmy_GCOwDeVhQ=w1099-h824-s-no-gm?authuser=0",
-  "https://lh3.googleusercontent.com/pw/AP1GczMHO2rAU8U7E4AXoIq4D0-YjtR832Cj-hZ7YSyLQPPNTucRHeHD-Vt9BsO9CK8KrHz19wu5Qz5uLmXS1dV0p1pPNuGR7_g5vxGzEI2yH5dbSMtpDjCi7GClfBuRZTqAKRIrnEr7RcMchvNhVSXqrtPozA=w1099-h824-s-no-gm?authuser=0"
+  "https://lh3.googleusercontent.com/pw/AP1GczPFBb-I42jZgBuUeOHOA25z1EF0sElIY6K-65L87qshTJghQlH9HaoU5BrWV9KL9BnKKd0gqdZJ5vXQHNQ1g4-EHtJ8ECZgc8fBuIqE-gI5nBUEaT8E=w2048-h2048-no",
+  "https://lh3.googleusercontent.com/pw/AP1GczM_iMDZjchRwyEluDp9fPFYehaPnmgA9vdhwx84brHezOMDUeJV8XT7_d7CSNl98IOpHY_8MHvtGQqkYcon8TTgx6rIe5x0uupajQfT_iSN7xfjaSfL=w2048-h2048-no",
+  "https://lh3.googleusercontent.com/pw/AP1GczPCVs5fexStOjjaUcPB7VpJjG6pnCqti0CbBaTxkzAjYnmzFUnStUJd7UBY8851vFFTnPpp2vihg6330iqNk-Zq-PHwrO1TfZfNTkqJlWCViIwlbx7_=w2048-h2048-no",
+  "https://lh3.googleusercontent.com/pw/AP1GczPS7K2mVAhNZNDIe0EJh95pP7i2-cLFFSzNAoqrGpvmPIjqa82fwbGFWQ7uGdIR4CrvldJGO_BMAn-8TJxR28PcJo3EtSFaZ-a6JyQ4sL999BbmSv1s=w2048-h2048-no",
+  "https://lh3.googleusercontent.com/pw/AP1GczM0W58S4-aaEX6BGr9jlPel9nsGMENkGe1jH1zeUYcxZGYOT0CXBLH8kKyGY-BxBwyonM0407NA5D8bQvpyW93sNHsYjsw1umzpf0zVpsI6vGivJRpb=w2048-h2048-no",
+  "https://lh3.googleusercontent.com/pw/AP1GczM7-UXoTf-PaxkaN-57AMgb6Hds_Ca4FmreWAEMfbdlaAwObOMj_Ud2_Has2LdWp--Q_LXARJUuWDeTNObmi0iDoMXKHwUaYa9qjZZs81YFKdD-e-5Y=w2048-h2048-no",
+  "https://lh3.googleusercontent.com/pw/AP1GczOdmobfcT7WYSsA7lXimUopmUCnGi4GfAqCX2yAdytMz7__gw-pibQtDGbIhzvqJ4nZOgbqA9twg_iVDS8BVl6Do5XnJK_OhXNMYUkYNh9wkC6czS5z=w2048-h2048-no",
+  "https://lh3.googleusercontent.com/pw/AP1GczMsVrh-_Eqr3DBtIPFMxLFzQhlaNeGkTZ2cEHdFtIPfKjFNBogscTDOUG3047BZctPAcLcvATGDtPw-emlN-Eft5Q_C1CE8Q_ikTwYDOmZZfaolfvOC=w2048-h2048-no",
+  "https://lh3.googleusercontent.com/pw/AP1GczN5_aigDrC3fM5VqzXr-qxl6dLkM4vP5wIF0zpaJEQoopLhuLZHR4coy-gRMLxYKaL8bVQKwYK2NgH97Vgtm5pWvMzDZgVQaPCEMZRy58Io92WwuMwf=w2048-h2048-no"
 ];
 
 const PHOTOS_2023 = [
