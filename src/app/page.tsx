@@ -46,6 +46,18 @@ const COLORS = {
 const LOGO_URL =
   "https://i.imgur.com/placeholder.png"; // Will be replaced dynamically
 
+const PHOTOS_2022 = [
+  "https://photos.fife.usercontent.com/pw/AP1GczN6bZ2el6EFH_5C3T5ai57LmpkdYLMCWb6fBneccoheOBXKlLaTTisVSg=w1099-h824-s-no-gm?authuser=0",
+  "https://photos.fife.usercontent.com/pw/AP1GczPQhEiH83K8ohpdrsXZSPpPoS2vmNtWtOHVFx__L8k6U6W28erzho5pSQ=w1099-h824-s-no-gm?authuser=0",
+  "https://photos.fife.usercontent.com/pw/AP1GczOd5v-qJZ9v9cThC04-mY7SF2YTKj8C5Rtr5N_mOM--KVxQcLlkGqu2qg=w761-h824-s-no-gm?authuser=0",
+  "https://photos.fife.usercontent.com/pw/AP1GczOrDiu6PiGVdPonBxe2qDJdJ4vBJwORrtI59VPw5rsGM61JYUF-vlKktg=w1099-h824-s-no-gm?authuser=0",
+  "https://photos.fife.usercontent.com/pw/AP1GczOpJ9LUG-2dms4cMpQv-6jy8996cONHwu7Wf0syoZQNUVYsqBg4BW1BuQ=w1099-h824-s-no-gm?authuser=0",
+  "https://photos.fife.usercontent.com/pw/AP1GczOt8KIppDcT6NjZkWqGknLr6NDJdla-n24447ohe1nA2pJMiyR0Dl9h2A=w1099-h824-s-no-gm?authuser=0",
+  "https://photos.fife.usercontent.com/pw/AP1GczOnr7pU700UKQrRDRewHVqe8WCUtXlDbCOjOl2hkf9phWmg2iVhdlb9sw=w1099-h824-s-no-gm?authuser=0",
+  "https://photos.fife.usercontent.com/pw/AP1GczOcc6l67jPD9qqXQCYcrcSDuIqKHcFBFLdAisPNGGOuC6CNaLC_qhAjAw=w1099-h824-s-no-gm?authuser=0",
+  "https://photos.fife.usercontent.com/pw/AP1GczPNVnwgU4JpbdqLMfSxsjumVxxTl6wYonhg28O3tJ58VY1diyutu1p9jw=w1099-h824-s-no-gm?authuser=0"
+];
+
 const PHOTOS_2023 = [
   "https://lh3.googleusercontent.com/pw/AP1GczPM0EKOTgEGOFCZlxiP_p0D6JptNS4znJXh5D0WFChn-59FN7BlF6OtPJ0FNy0aVUYskVYVX-D2ElHUXvryBqte06kAsVVoqijELDPOmUcZi1sqeKhRaCJDQ6beTG7cs1nHk1NnIxfU2bJGxXEEaA3cJQ=w1000-h666-s-no-gm?authuser=0",
   "https://lh3.googleusercontent.com/pw/AP1GczNJrx0XLQLRS_WSEbek2Slvtp2uSljn9uIGVPk1CaK_IH_3lhLrfN2Di_H7LoMgHJYcvxf2IoxHOyH5rj89xc7nFAV5RTRTqDSnKXhI0c2eOLHK1TxmO7C2GMLUi6NPBOCLGy1Dfejpm8IE3hMfZdbNKg=w1000-h666-s-no-gm?authuser=0",
@@ -219,7 +231,7 @@ export default function UNFSWebsite() {
   useEffect(() => {
     let interval: any;
     if (galleryYear) {
-      const activePhotos = galleryYear === "2023" ? PHOTOS_2023 : PHOTOS_2025;
+      const activePhotos = galleryYear === "2022" ? PHOTOS_2022 : galleryYear === "2023" ? PHOTOS_2023 : PHOTOS_2025;
       interval = setInterval(() => {
         setGalleryIndex((prev) => (prev + 1) % activePhotos.length);
       }, 2000);
@@ -286,36 +298,40 @@ export default function UNFSWebsite() {
       </div>
 
       {/* Gallery Modal Overlay */}
-      {galleryYear && (
-        <div style={{ position: "fixed", top: 0, left: 0, right: 0, bottom: 0, zIndex: 2000, background: "rgba(15,31,48,0.95)", backdropFilter: "blur(8px)", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
-          <button onClick={() => setGalleryYear(null)} style={{ position: "absolute", top: 24, right: 32, background: "none", border: "none", color: COLORS.white, fontSize: 36, cursor: "pointer", zIndex: 2001 }}>✕</button>
-          
-          <div style={{ width: "90%", maxWidth: 1000, height: "75vh", position: "relative", display: "flex", alignItems: "center", justifyContent: "center" }}>
-            {/* Using Next Image for optimized rendering, unoptimized to allow external Google urls without config */}
-            <Image 
-              src={(galleryYear === "2023" ? PHOTOS_2023 : PHOTOS_2025)[galleryIndex]} 
-              alt={`UNFS ${galleryYear} Retreat Photo ${galleryIndex + 1}`} 
-              fill 
-              unoptimized
-              style={{ objectFit: "contain", transition: "opacity 0.4s ease" }}
-            />
-          </div>
-          
-          <div style={{ display: "flex", gap: 12, marginTop: 24, flexWrap: "wrap", justifyContent: "center", maxWidth: "80%" }}>
-            {(galleryYear === "2023" ? PHOTOS_2023 : PHOTOS_2025).map((_, i) => (
-              <button 
-                key={i} 
-                onClick={() => setGalleryIndex(i)}
-                style={{ width: 12, height: 12, borderRadius: "50%", padding: 0, border: "none", background: i === galleryIndex ? COLORS.gold : "rgba(255,255,255,0.3)", cursor: "pointer", transition: "background 0.3s" }}
-                aria-label={`Go to slide ${i + 1}`}
+      {galleryYear && (() => {
+        const activePhotos = galleryYear === "2022" ? PHOTOS_2022 : galleryYear === "2023" ? PHOTOS_2023 : PHOTOS_2025;
+        const title = galleryYear === "2022" ? "The Beginning • 2022 Retreat" : galleryYear === "2023" ? "Growing Strong • 2023 Retreat" : "On The Wheel • 2025 Retreat";
+        return (
+          <div style={{ position: "fixed", top: 0, left: 0, right: 0, bottom: 0, zIndex: 2000, background: "rgba(15,31,48,0.95)", backdropFilter: "blur(8px)", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
+            <button onClick={() => setGalleryYear(null)} style={{ position: "absolute", top: 24, right: 32, background: "none", border: "none", color: COLORS.white, fontSize: 36, cursor: "pointer", zIndex: 2001 }}>✕</button>
+            
+            <div style={{ width: "90%", maxWidth: 1000, height: "75vh", position: "relative", display: "flex", alignItems: "center", justifyContent: "center" }}>
+              {/* Using Next Image for optimized rendering, unoptimized to allow external Google urls without config */}
+              <Image 
+                src={activePhotos[galleryIndex]} 
+                alt={`UNFS ${galleryYear} Retreat Photo ${galleryIndex + 1}`} 
+                fill 
+                unoptimized
+                style={{ objectFit: "contain", transition: "opacity 0.4s ease" }}
               />
-            ))}
+            </div>
+            
+            <div style={{ display: "flex", gap: 12, marginTop: 24, flexWrap: "wrap", justifyContent: "center", maxWidth: "80%" }}>
+              {activePhotos.map((_, i) => (
+                <button 
+                  key={i} 
+                  onClick={() => setGalleryIndex(i)}
+                  style={{ width: 12, height: 12, borderRadius: "50%", padding: 0, border: "none", background: i === galleryIndex ? COLORS.gold : "rgba(255,255,255,0.3)", cursor: "pointer", transition: "background 0.3s" }}
+                  aria-label={`Go to slide ${i + 1}`}
+                />
+              ))}
+            </div>
+            <div style={{ fontFamily: "'Barlow Condensed', sans-serif", color: "white", marginTop: 16, letterSpacing: 2, textTransform: "uppercase" }}>
+              {title}
+            </div>
           </div>
-          <div style={{ fontFamily: "'Barlow Condensed', sans-serif", color: "white", marginTop: 16, letterSpacing: 2, textTransform: "uppercase" }}>
-            {galleryYear === "2023" ? "Growing Strong • 2023 Retreat" : "On The Wheel • 2025 Retreat"}
-          </div>
-        </div>
-      )}
+        );
+      })()}
 
       {/* NAV */}
       <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 1000, background: scrolled ? "rgba(27,47,69,0.97)" : "transparent", backdropFilter: scrolled ? "blur(12px)" : "none", transition: "all 0.4s", padding: scrolled ? "10px 24px" : "16px 24px", borderBottom: scrolled ? `1px solid rgba(200,150,74,0.2)` : "none" }}>
@@ -472,8 +488,12 @@ export default function UNFSWebsite() {
         <div style={container}>
           {sectionTitle("Memories", "Photo Gallery")}
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: 12 }}>
-            {[{ year: "2022", label: "The Beginning", color: COLORS.navy, span: 2 }, { year: "2023", label: "Growing Strong", color: COLORS.forest, span: 1 }, { year: "2025", label: "On The Wheel", color: COLORS.warmGray, span: 1 }].map((item, i) => {
-              const hasPhotos = item.year === "2023" || item.year === "2025";
+            {[
+              { year: "2025", label: "On The Wheel", color: COLORS.warmGray, span: 2 },
+              { year: "2023", label: "Growing Strong", color: COLORS.forest, span: 1 },
+              { year: "2022", label: "The Beginning", color: COLORS.navy, span: 1 }
+            ].map((item, i) => {
+              const hasPhotos = item.year === "2022" || item.year === "2023" || item.year === "2025";
               return (
               <div key={i} onClick={() => { if (hasPhotos) { setGalleryIndex(0); setGalleryYear(item.year); } }} style={{ background: `linear-gradient(135deg, ${item.color}, ${item.color}dd)`, borderRadius: 12, aspectRatio: item.span === 2 ? "1.5/1" : "1/1", gridColumn: `span ${item.span}`, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", position: "relative", overflow: "hidden", cursor: hasPhotos ? "pointer" : "default", transition: "transform 0.3s" }} onMouseEnter={e => { if (hasPhotos) e.currentTarget.style.transform = "scale(1.02)" }} onMouseLeave={e => e.currentTarget.style.transform = "scale(1)"}>
                 <TopoPattern opacity={0.08} />
@@ -485,9 +505,6 @@ export default function UNFSWebsite() {
               </div>
             )})}
           </div>
-          <p style={{ textAlign: "center", fontFamily: "'Source Serif 4', serif", fontSize: 15, color: COLORS.warmGray, marginTop: 32, fontStyle: "italic" }}>
-            Photos from past retreats coming soon.
-          </p>
         </div>
       </section>
 
